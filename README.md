@@ -20,12 +20,15 @@ Clone repo
 `git clone git@github.com:navedsr/cars-unlimited.git`
 
 Navigate into cloned repo
+
 `cd cars-unlimited`
 
 Build docker image
+
 `docker build -t mmt-cars:prod .`
 
 Build docker image
+
 `docker run -d -p 3001:80 mmt-cars:prod`
 
 Check app deployment
