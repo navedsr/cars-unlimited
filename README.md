@@ -29,10 +29,10 @@ Build docker image
 
 Build docker image
 
-`docker run -d -p 3001:80 mmt-cars:prod`
+`docker run -d -p 3000:80 mmt-cars:prod`
 
 Check app deployment
   - Open any web browser
-  - Type (http://localhost:3001)
+  - Type (http://localhost:3000)
 
 ---
