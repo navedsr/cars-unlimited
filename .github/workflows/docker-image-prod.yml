@@ -18,9 +18,9 @@ jobs:
       run: docker build . --file Dockerfile.prod --tag prod:$(date +%s)
 
     - name: Push the Docker image
-      uses: mr-smithers-excellent/docker-build-push@v4
+      uses: docker/build-push-action@v1
       with:
-        image: navedsr/mmtcarsunlimited
-        registry: docker.io
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+        repository: navedsr/mmtcarsunlimited:prod
+        tag_with_ref: true
