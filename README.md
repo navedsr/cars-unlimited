@@ -27,7 +27,7 @@ Build docker image
 
 `docker build -t mmt-cars:prod -f Dockerfile.prod .`
 
-Build docker image
+Build docker container
 
 `docker run -d -p 3001:80 mmt-cars:prod`
 
@@ -49,11 +49,19 @@ Navigate into cloned repo
 
 `cd cars-unlimited`
 
-Build docker image
+Build docker image - Production
+
+`docker build -t mmt-cars:prod -f Dockerfile.prod .`
+
+Build docker container - Production
+
+`docker run -d -p 3001:80 mmt-cars:prod`
+
+Build docker image - Test
 
 `docker build -t mmt-cars:test -f Dockerfile.test .`
 
-Build docker image
+Build docker container - Test
 
 `docker run -d -p 3000:3000 mmt-cars:test`
 
