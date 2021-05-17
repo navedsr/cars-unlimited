@@ -25,11 +25,11 @@ Navigate into cloned repo
 
 Build docker image
 
-`docker build -t mmt-cars:prod .`
+`docker build -t mmt-cars:prod -f Dockerfile.prod .`
 
 Build docker image
 
-`docker run -d -p 3000:80 mmt-cars:prod`
+`docker run -d -p 3001:80 mmt-cars:prod`
 
 Check app deployment
   - Open any web browser
@@ -51,7 +51,7 @@ Navigate into cloned repo
 
 Build docker image
 
-`docker build -t mmt-cars:test --target test .`
+`docker build -t mmt-cars:test -f Dockerfile.test .`
 
 Build docker image
 
@@ -62,6 +62,6 @@ Run the test
 
 `docker exec -it <container-id> /bin/bash`
 
-`npm run test`
+`npm run`
 
 
