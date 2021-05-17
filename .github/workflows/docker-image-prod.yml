@@ -1,4 +1,4 @@
-name: Docker Image CI (Production)
+name: Docker Image CI-CD (Production)
 
 on:
   push:
@@ -16,3 +16,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile.prod --tag prod:$(date +%s)
+
+    - name: Push the Docker image
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:
+        image: navedsr/mmtcarsunlimited
+        registry: docker.io
+        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
