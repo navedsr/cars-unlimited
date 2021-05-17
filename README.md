@@ -14,7 +14,7 @@ You have been asked to create a `docker` file which will run the application whi
   
 ### Result Format
 
-How to deploy application:
+How to deploy application in production:
 
 Clone repo
 `git clone git@github.com:navedsr/cars-unlimited.git`
@@ -36,3 +36,32 @@ Check app deployment
   - Type (http://localhost:3000)
 
 ---
+## Task 2: Deploy application to `Test` and `Production`
+
+### Result Format
+
+How to deploy application in test:
+
+Clone repo
+`git clone git@github.com:navedsr/cars-unlimited.git`
+
+Navigate into cloned repo
+
+`cd cars-unlimited`
+
+Build docker image
+
+`docker build -t mmt-cars:test --target test .`
+
+Build docker image
+
+`docker run -d -p 3000:3000 mmt-cars:test`
+
+Run the test
+`docker ps -a`
+
+`docker exec -it <container-id> /bin/bash`
+
+`npm run test`
+
+

@@ -29,3 +29,8 @@ COPY nginx.config /etc/nginx/conf.d/default.conf
 
 # Move application files to root folder
 COPY --from=base /app/build /usr/share/nginx/html
+
+FROM base AS test
+RUN npm ci --test
+
+CMD [ "npm", "start" ]
